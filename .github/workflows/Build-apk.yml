@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -23,11 +23,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install & Sync Capacitor
+      - name: Install Dependencies
         run: |
-          npm install
-          npx cap add android
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+          # Debug: cek apakah file config ada
+          ls -la 
 
+      - name: Sync Capacitor
+        run: |
+          # Ini biar web lu dicopy ke folder android
+          npx cap sync
+          
       - name: Build Android Project
         run: |
           cd android
