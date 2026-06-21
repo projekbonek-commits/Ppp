@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx'; // Mengimpor file App.jsx yang kita buat tadi
-import './index.css';        // Jika Anda menggunakan Tailwind
+import { HashRouter } from 'react-router-dom'; // Pastikan sudah install react-router-dom
+import App from './App';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </React.StrictMode>
 );
-
