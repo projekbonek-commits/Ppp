@@ -23,11 +23,19 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # TRIK BARU: Bikin folder 'www' otomatis dan masukin file HTML ke situ
+      - name: Prepare Web Assets
+        run: |
+          mkdir www
+          cp index.html www/
+          cp manifest.json www/ 2>/dev/null || :
+          cp icon.png www/ 2>/dev/null || :
+
       - name: Install Capacitor & Android Tools
         run: |
           npm install @capacitor/core @capacitor/cli @capacitor/android
-          # Init project baru biar sync gak bingung
-          npx cap init MarketEFootball com.efootball.market --web-dir .
+          # web-dir sekarang diarahkan ke folder 'www'
+          npx cap init MarketEFootball com.efootball.market --web-dir www
           npx cap add android
 
       - name: Build Android Project
