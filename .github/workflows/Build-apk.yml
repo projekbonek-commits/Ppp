@@ -23,17 +23,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Dependencies
+      - name: Install Capacitor & Android Tools
         run: |
           npm install @capacitor/core @capacitor/cli @capacitor/android
-          # Debug: cek apakah file config ada
-          ls -la 
+          # Init project baru biar sync gak bingung
+          npx cap init MarketEFootball com.efootball.market --web-dir .
+          npx cap add android
 
-      - name: Sync Capacitor
-        run: |
-          # Ini biar web lu dicopy ke folder android
-          npx cap sync
-          
       - name: Build Android Project
         run: |
           cd android
