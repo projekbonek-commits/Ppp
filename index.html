@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market EFootball</title>
-  </head>
-  <body>
-    <!-- Ini adalah wadah utama tempat React akan dirender -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' };
+    </script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-gray-50 dark:bg-black">
     <div id="root"></div>
 
-    <!-- Ini adalah jembatan yang menghubungkan index.html ke App.jsx Anda -->
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+    <script type="text/babel">
+        // PASTE SELURUH KODE MARKET_EFOOTBALL.TSX ANDA DI SINI
+        // (Hapus bagian import dan export default, gunakan komponen App langsung)
+        
+        function App() {
+            // ... (Copy semua isi fungsi App yang Anda kirim tadi)
+            return (
+                <div className="text-center p-10">
+                    <h1 className="text-2xl font-bold">Aplikasi Sedang Dimuat...</h1>
+                    <p>Pastikan kode React Anda sudah ditempel di dalam tag script ini.</p>
+                </div>
+            );
+        }
 
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
