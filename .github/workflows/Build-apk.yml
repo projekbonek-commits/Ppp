@@ -1,14 +1,9 @@
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Ini wajib ada
-          publish_dir: ./dist
-          
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Workflow akan jalan saat ada push ke branch main
+      - main
 
 jobs:
   build-and-deploy:
@@ -20,18 +15,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build Application
         run: npm run build
-        # Pastikan di package.json Anda ada script "build" (biasanya 'vite build')
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Folder output hasil build Vite
+          publish_dir: ./dist
           
