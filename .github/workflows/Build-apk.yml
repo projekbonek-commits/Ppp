@@ -26,6 +26,11 @@ jobs:
       - name: Prepare Web Assets
         run: |
           mkdir www
+          
+          # TRIK SULAP: Copy Market.html dan ubah namanya jadi index.html khusus buat di dalam APK
+          cp Market.html www/index.html
+          
+          # Copy sisa file lainnya (kalau ada logo, gambar, dll)
           cp -r * www/ 2>/dev/null || true
           rm -rf www/www 2>/dev/null || true
           rm -rf www/.github 2>/dev/null || true
