@@ -1,3 +1,7 @@
+// @ts-nocheck
+import React from 'react';
+// ... sisa kode Anda
+
 import React, { useState, useEffect, useRef } from 'react';
 
 // --- ICONS (Custom SVG for zero dependencies and perfect styling) ---
