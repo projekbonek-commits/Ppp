@@ -1,0 +1,6 @@
+{
+  "appId": "com.efootball.market",
+  "appName": "Market EFootball",
+  "webDir": ".",
+  "bundledWebRuntime": false
+}
